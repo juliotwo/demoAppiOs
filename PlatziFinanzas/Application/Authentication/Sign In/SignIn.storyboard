@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kMW-HX-DTW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kMW-HX-DTW">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="Tps-01-4sv">
             <objects>
-                <viewController id="kMW-HX-DTW" sceneMemberID="viewController">
+                <viewController id="kMW-HX-DTW" customClass="SignInViewController" customModule="DemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i0L-QN-PGA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,7 +137,7 @@
                                         <rect key="frame" x="20" y="70" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qum-qb-FV0">
                                         <rect key="frame" x="303" y="108" width="91" height="29"/>
@@ -172,7 +172,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="xot-u3-Aob" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="xAx-sJ-C2q"/>
+                                            <action selector="SignIn:" destination="kMW-HX-DTW" eventType="touchUpInside" id="ehh-YI-doA"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -212,6 +212,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bwF-Wi-HcH"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="oog-lV-NiC" id="muU-DI-4AW"/>
+                        <outlet property="passwordTextField" destination="bP2-vK-jm9" id="hS9-t5-Hl1"/>
+                        <segue destination="xot-u3-Aob" kind="modal" identifier="goToMain" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="hG2-dS-nmh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zx-xn-Skb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
