@@ -44,6 +44,7 @@
 		9FF2782A219C7E830083760B /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FF27829219C7E830083760B /* Colors.xcassets */; };
 		F338849F22D3B1DE00D72E23 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F338849E22D3B1DD00D72E23 /* GoogleService-Info.plist */; };
 		F33884A122D3BBD500D72E23 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884A022D3BBD500D72E23 /* SignInViewController.swift */; };
+		F33884A322D3DF4000D72E23 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884A222D3DF4000D72E23 /* SignInViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		9FF27829219C7E830083760B /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		F338849E22D3B1DD00D72E23 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F33884A022D3BBD500D72E23 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		F33884A222D3DF4000D72E23 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +280,7 @@
 			children = (
 				9FDFDF12219C6F4A00CD505D /* SignIn.storyboard */,
 				F33884A022D3BBD500D72E23 /* SignInViewController.swift */,
+				F33884A222D3DF4000D72E23 /* SignInViewModel.swift */,
 			);
 			path = "Sign In";
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				9FE368CB219DAA7400606E29 /* TabBarViewController.swift in Sources */,
 				9F62FD2A219CB19D00A83344 /* OnBoardingContainerViewController.swift in Sources */,
 				9F62FD2C219CB23100A83344 /* OnBoardingViewController.swift in Sources */,
+				F33884A322D3DF4000D72E23 /* SignInViewModel.swift in Sources */,
 				F33884A122D3BBD500D72E23 /* SignInViewController.swift in Sources */,
 				9FE368CF219DADCA00606E29 /* BudgetViewController.swift in Sources */,
 			);
