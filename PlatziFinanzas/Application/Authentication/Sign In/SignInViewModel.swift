@@ -8,7 +8,7 @@
 
 import Foundation
 import FirebaseAuth
-
+import FBSDKLoginKit
 typealias SignInHandler = ( (_ success: Bool, _ error: Error?) -> Void )
 
 
@@ -27,9 +27,10 @@ class SignInViewModel: NSObject {
             if let error = error {
                 handler?(false, error)
             }
-            
+
             if result != nil {
                 handler?(true, nil)
+                print(result!.user.refreshToken ?? "hola")
             }
         }
         
@@ -39,5 +40,20 @@ class SignInViewModel: NSObject {
         let range = NSRange(location: 0, length: text.count)
         let regex = try? NSRegularExpression(pattern: regex)
         return regex?.firstMatch(in: text, options: [], range: range) != nil
+    }
+    static func facebookLogin(viewController: UIViewController, handler: SignInHandler?) {
+        FBSDKLoginManager().logIn(withReadPermissions: ["email"], from: viewController) { (result, error) in
+            if let error = error {
+                handler?(false, error)
+                return
+            }
+            
+            guard let token = FBSDKAccessToken.current()?.tokenString else { return }
+            let credentials = FacebookAuthProvider.credential(withAccessToken: token)
+            Auth.auth().signInAndRetrieveData(with: credentials, completion: { (authResult, error) in
+                
+                handler?(true, nil)
+            })
+        }
     }
 }

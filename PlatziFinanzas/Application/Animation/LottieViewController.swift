@@ -10,13 +10,13 @@ import UIKit
 import Lottie
 
 class LottieViewController: UIViewController {
-    @IBOutlet weak var aniamtionView: LOTAnimationView!
+    @IBOutlet weak var aniamtionView: AnimationView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        aniamtionView.setAnimation(named: "day_of_the_dead_skull")
-        aniamtionView.loopAnimation = true
+        aniamtionView.animation = Animation.named("day_of_the_dead_skull")
+    
         aniamtionView.play()
     }
     

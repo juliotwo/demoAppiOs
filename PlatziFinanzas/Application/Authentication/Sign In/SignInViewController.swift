@@ -23,7 +23,7 @@ class SignInViewController: UIViewController {
         SignInViewModel.signInWith(
             email: emailTextField.text,
             password: passwordTextField.text
-        ) { [weak self] (success, error) in
+        ) { [weak self] success, error in
             
             if let error = error {
                 let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
@@ -39,5 +39,20 @@ class SignInViewController: UIViewController {
         }
     }
     
-
+    @IBAction func facebookLogin(_ sender: Any) {
+        SignInViewModel.facebookLogin(viewController: self, handler: { [weak self] (success, error) in
+            if let error = error {
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(ok)
+                self?.present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            if success {
+                self?.performSegue(withIdentifier: "goToMain", sender: self)
+            }
+        })
+    }
+    
 }
