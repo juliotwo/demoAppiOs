@@ -9,15 +9,54 @@
 import UIKit
 import Firebase
 import FBSDKLoginKit
+import GoogleSignIn
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
     var window: UIWindow?
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(ok)
+            self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        
+        SignInViewModel.googleLogin(user: user) { [weak self] (succes, error) in
+            if let error = error {
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(ok)
+                self?.window?.rootViewController?.present(alert, animated: true, completion: nil)
+                return
+            }
+            
+            if succes {
+                self?.window = UIWindow(frame: UIScreen.main.bounds)
+                let name = "Main"
+                let viewController = UIStoryboard(name: name, bundle: Bundle.main).instantiateInitialViewController()
+                self?.window?.rootViewController = viewController
+                self?.window?.makeKeyAndVisible()
+                
+            }
+        }
+  
+    }
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        print(error)
+    }
+    
+
+   
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
         FirebaseApp.configure()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
 
         initialViewController()
         return true
@@ -33,7 +72,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if onboaring {
             name = "SignIn"
         }
-        
+        let session = Auth.auth().currentUser != nil
+        if session{
+            name = "Main"
+        }
         let viewController = UIStoryboard(name: name, bundle: Bundle.main).instantiateInitialViewController()
         
         window?.rootViewController = viewController
@@ -65,7 +107,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if FBSDKApplicationDelegate.sharedInstance()?.application(app, open: url, options: options) ?? false {
             return true
         }
-        
+        if  GIDSignIn.sharedInstance()?.handle(url,                               sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                                               annotation: [:]) ?? false{
+            return true
+        }
         return true
     }
 

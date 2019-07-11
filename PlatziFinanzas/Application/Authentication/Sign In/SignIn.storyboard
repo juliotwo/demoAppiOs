@@ -55,7 +55,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="OZC-hc-cuL">
-                                <rect key="frame" x="62" y="664" width="290" height="50"/>
+                                <rect key="frame" x="113" y="664" width="188" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVA-r0-eng">
                                         <rect key="frame" x="0.0" y="0.0" width="86" height="50"/>
@@ -101,22 +101,9 @@
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bod-lp-hR9">
-                                        <rect key="frame" x="204" y="0.0" width="86" height="50"/>
-                                        <color key="backgroundColor" name="TwitterColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="M9p-fH-o4I"/>
-                                            <constraint firstAttribute="width" constant="86" id="XMi-uk-kQI"/>
-                                        </constraints>
-                                        <state key="normal" image="Twitter">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="googleSignIn:" destination="kMW-HX-DTW" eventType="touchUpInside" id="Tlv-1r-fAZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -238,7 +225,6 @@
         <image name="Facebook" width="10" height="18"/>
         <image name="Google" width="17" height="18"/>
         <image name="LaunchScreen" width="304" height="153"/>
-        <image name="Twitter" width="19" height="16"/>
         <namedColor name="FacebookColor">
             <color red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -250,9 +236,6 @@
         </namedColor>
         <namedColor name="RedColor">
             <color red="0.81568627450980391" green="0.0078431372549019607" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="TwitterColor">
-            <color red="0.0" green="0.67450980392156867" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

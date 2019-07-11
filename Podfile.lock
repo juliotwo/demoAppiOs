@@ -95,6 +95,18 @@ PODS:
     - GoogleUtilities/Network (~> 5.2)
     - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
+  - GoogleSignIn (4.4.0):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.2.0):
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+  - GoogleToolboxForMac/Defines (2.2.0)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.0)":
+    - GoogleToolboxForMac/DebugUtils (= 2.2.0)
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.0)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
   - GoogleUtilities/AppDelegateSwizzler (5.7.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -147,6 +159,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/InAppMessagingDisplay
   - Firebase/Messaging
+  - GoogleSignIn
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -168,6 +181,8 @@ SPEC REPOS:
     - FirebaseInstanceID
     - FirebaseMessaging
     - GoogleAppMeasurement
+    - GoogleSignIn
+    - GoogleToolboxForMac
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
@@ -195,6 +210,8 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: a122b0c258720cf250551bb2bedf48c699f80d90
   FirebaseMessaging: 4235f949ce1c4e827aeb19705ba5c53f9b85aa10
   GoogleAppMeasurement: ffe513e90551844a739e7bcbb1d2aca1c28a4338
+  GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
+  GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GoogleUtilities: 273e67030e0de313e7304f6dcfa96fc5214f6c23
   "gRPC-C++": e76441995900ac90e9bd98644ab4733f12521edf
   gRPC-Core: 4028031ed2c5267cca0d846c876d8046b1ecb9b6
@@ -203,6 +220,6 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
 
-PODFILE CHECKSUM: 9abb05459aea169efb73e225ae9bda9f1d796f24
+PODFILE CHECKSUM: 7fae74f9974c81610f782e7d66dc10f7819e7c09
 
 COCOAPODS: 1.6.1

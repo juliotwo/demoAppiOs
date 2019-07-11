@@ -9,6 +9,8 @@
 import Foundation
 import FirebaseAuth
 import FBSDKLoginKit
+import Firebase
+import GoogleSignIn
 typealias SignInHandler = ( (_ success: Bool, _ error: Error?) -> Void )
 
 
@@ -40,6 +42,23 @@ class SignInViewModel: NSObject {
         let range = NSRange(location: 0, length: text.count)
         let regex = try? NSRegularExpression(pattern: regex)
         return regex?.firstMatch(in: text, options: [], range: range) != nil
+    }
+    
+    static func googleLogin(user:GIDGoogleUser?, handler:SignInHandler?){
+        guard let authentication = user?.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        
+        Auth.auth().signInAndRetrieveData(with: credential) {  (authResult, error)in
+            if let error = error {
+                handler?(false,error)
+            }
+            if authResult != nil {
+                handler?(true, nil)
+            }
+           
+        }
+        
     }
     static func facebookLogin(viewController: UIViewController, handler: SignInHandler?) {
         FBSDKLoginManager().logIn(withReadPermissions: ["email"], from: viewController) { (result, error) in

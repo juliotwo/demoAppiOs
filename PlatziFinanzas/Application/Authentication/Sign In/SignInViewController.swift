@@ -8,13 +8,18 @@
 
 import UIKit
 import FirebaseAuth
-class SignInViewController: UIViewController {
+import Firebase
+import GoogleSignIn
+class SignInViewController: UIViewController, GIDSignInUIDelegate {
+    
+
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       GIDSignIn.sharedInstance().uiDelegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -39,6 +44,9 @@ class SignInViewController: UIViewController {
         }
     }
     
+    @IBAction func googleSignIn(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+    }
     @IBAction func facebookLogin(_ sender: Any) {
         SignInViewModel.facebookLogin(viewController: self, handler: { [weak self] (success, error) in
             if let error = error {

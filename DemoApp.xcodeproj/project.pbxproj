@@ -35,7 +35,6 @@
 		9FDFDF07219C6D6500CD505D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FDFDF06219C6D6500CD505D /* Profile.storyboard */; };
 		9FDFDF0B219C6D9E00CD505D /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FDFDF0A219C6D9E00CD505D /* Statistics.storyboard */; };
 		9FDFDF0E219C6DB900CD505D /* Budget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FDFDF0C219C6DB900CD505D /* Budget.storyboard */; };
-		9FDFDF11219C6E1B00CD505D /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FDFDF10219C6E1B00CD505D /* Add.storyboard */; };
 		9FDFDF13219C6F4A00CD505D /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FDFDF12219C6F4A00CD505D /* SignIn.storyboard */; };
 		9FE368C7219CCB3100606E29 /* EmptyState.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FE368C6219CCB3100606E29 /* EmptyState.xib */; };
 		9FE368CB219DAA7400606E29 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE368CA219DAA7400606E29 /* TabBarViewController.swift */; };
@@ -45,6 +44,10 @@
 		F338849F22D3B1DE00D72E23 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F338849E22D3B1DD00D72E23 /* GoogleService-Info.plist */; };
 		F33884A122D3BBD500D72E23 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884A022D3BBD500D72E23 /* SignInViewController.swift */; };
 		F33884A322D3DF4000D72E23 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884A222D3DF4000D72E23 /* SignInViewModel.swift */; };
+		F33884CC22D5890A00D72E23 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884CB22D5890A00D72E23 /* TransactionsViewModel.swift */; };
+		F33884D022D5978C00D72E23 /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F33884CD22D5978B00D72E23 /* Add.storyboard */; };
+		F33884D122D5978C00D72E23 /* AddTransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884CE22D5978B00D72E23 /* AddTransactionsViewModel.swift */; };
+		F33884D222D5978C00D72E23 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884CF22D5978C00D72E23 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,7 +111,6 @@
 		9FDFDF06219C6D6500CD505D /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		9FDFDF0A219C6D9E00CD505D /* Statistics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
 		9FDFDF0D219C6DB900CD505D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PlatziFinanzas/Application/Main/Main/Base.lproj/Budget.storyboard; sourceTree = "<group>"; };
-		9FDFDF10219C6E1B00CD505D /* Add.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
 		9FDFDF12219C6F4A00CD505D /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		9FE368C6219CCB3100606E29 /* EmptyState.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyState.xib; sourceTree = "<group>"; };
 		9FE368CA219DAA7400606E29 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,10 @@
 		F33884AE22D440AD00D72E23 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F33884B522D4417300D72E23 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		F33884C822D451D000D72E23 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Carthage/Build/iOS/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		F33884CB22D5890A00D72E23 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
+		F33884CD22D5978B00D72E23 /* Add.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
+		F33884CE22D5978B00D72E23 /* AddTransactionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionsViewModel.swift; sourceTree = "<group>"; };
+		F33884CF22D5978C00D72E23 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +316,7 @@
 				9F62FD2F219CC47100A83344 /* TransactionsViewController.swift */,
 				9FE368C6219CCB3100606E29 /* EmptyState.xib */,
 				9FE368CC219DAD5E00606E29 /* TransactionsCell.xib */,
+				F33884CB22D5890A00D72E23 /* TransactionsViewModel.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -369,7 +376,9 @@
 		9FDFDF0F219C6DC300CD505D /* Add */ = {
 			isa = PBXGroup;
 			children = (
-				9FDFDF10219C6E1B00CD505D /* Add.storyboard */,
+				F33884CD22D5978B00D72E23 /* Add.storyboard */,
+				F33884CE22D5978B00D72E23 /* AddTransactionsViewModel.swift */,
+				F33884CF22D5978C00D72E23 /* AddViewController.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -485,8 +494,8 @@
 				9FE368C7219CCB3100606E29 /* EmptyState.xib in Resources */,
 				9FF2782A219C7E830083760B /* Colors.xcassets in Resources */,
 				9F034339219C57E400603993 /* LaunchScreen.storyboard in Resources */,
+				F33884D022D5978C00D72E23 /* Add.storyboard in Resources */,
 				9FDFDF0E219C6DB900CD505D /* Budget.storyboard in Resources */,
-				9FDFDF11219C6E1B00CD505D /* Add.storyboard in Resources */,
 				9F034336219C57E400603993 /* Assets.xcassets in Resources */,
 				9FDFDF13219C6F4A00CD505D /* SignIn.storyboard in Resources */,
 				9FE368CD219DAD5E00606E29 /* TransactionsCell.xib in Resources */,
@@ -524,6 +533,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
@@ -540,6 +550,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
@@ -580,12 +591,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DemoApp/Pods-DemoApp-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInAppMessagingDisplay/InAppMessagingDisplayResources.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/InAppMessagingDisplayResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -623,11 +636,14 @@
 			files = (
 				9F62FD30219CC47100A83344 /* TransactionsViewController.swift in Sources */,
 				9F62FD24219C914700A83344 /* Shadow.swift in Sources */,
+				F33884D222D5978C00D72E23 /* AddViewController.swift in Sources */,
 				9F62FD2E219CB4FA00A83344 /* OnBoardingStepsViewController.swift in Sources */,
 				9F03432F219C57E300603993 /* AppDelegate.swift in Sources */,
+				F33884D122D5978C00D72E23 /* AddTransactionsViewModel.swift in Sources */,
 				9FCF77A2219DD52D00BCF51B /* LottieViewController.swift in Sources */,
 				9FE368CB219DAA7400606E29 /* TabBarViewController.swift in Sources */,
 				9F62FD2A219CB19D00A83344 /* OnBoardingContainerViewController.swift in Sources */,
+				F33884CC22D5890A00D72E23 /* TransactionsViewModel.swift in Sources */,
 				9F62FD2C219CB23100A83344 /* OnBoardingViewController.swift in Sources */,
 				F33884A322D3DF4000D72E23 /* SignInViewModel.swift in Sources */,
 				F33884A122D3BBD500D72E23 /* SignInViewController.swift in Sources */,

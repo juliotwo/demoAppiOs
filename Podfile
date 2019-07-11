@@ -14,4 +14,5 @@ target 'DemoApp' do
   pod 'Firebase/Firestore'
   pod 'Firebase/InAppMessagingDisplay'
   pod 'FBSDKLoginKit'
+  pod 'GoogleSignIn'
 end
