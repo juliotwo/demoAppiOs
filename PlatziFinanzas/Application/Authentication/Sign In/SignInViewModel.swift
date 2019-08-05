@@ -16,7 +16,7 @@ typealias SignInHandler = ( (_ success: Bool, _ error: Error?) -> Void )
 class SignInViewModel: NSObject {
     static func signInWith(email: String?, password: String?, handler: SignInHandler?) {
         guard let email = email,
-            validate(text: email, regex: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}") else {
+            validate(email, "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}") else {
                 return
         }
         
@@ -37,7 +37,7 @@ class SignInViewModel: NSObject {
         
     }
     
-    static private func validate(text: String, regex: String) -> Bool {
+    static public func validate(_ text: String,_ regex: String) -> Bool {
         let range = NSRange(location: 0, length: text.count)
         let regex = try? NSRegularExpression(pattern: regex)
         return regex?.firstMatch(in: text, options: [], range: range) != nil

@@ -122,6 +122,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="ValidateEmail:" destination="kMW-HX-DTW" eventType="editingChanged" id="1cS-Ad-GSU"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bP2-vK-jm9">
                                         <rect key="frame" x="20" y="70" width="374" height="30"/>
@@ -165,17 +168,25 @@
                                             <action selector="SignIn:" destination="kMW-HX-DTW" eventType="touchUpInside" id="ehh-YI-doA"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OG-RK-fa6">
+                                        <rect key="frame" x="29.999999999999996" y="112" width="37.666666666666657" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="RedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="niW-BM-s2m" firstAttribute="leading" secondItem="B6f-gL-GER" secondAttribute="leading" constant="20" id="3ZS-E0-g8g"/>
                                     <constraint firstItem="bP2-vK-jm9" firstAttribute="leading" secondItem="B6f-gL-GER" secondAttribute="leading" constant="20" id="7SI-m1-FBT"/>
+                                    <constraint firstItem="4OG-RK-fa6" firstAttribute="top" secondItem="bP2-vK-jm9" secondAttribute="bottom" constant="12" id="7zl-mt-TZo"/>
                                     <constraint firstItem="bP2-vK-jm9" firstAttribute="top" secondItem="oog-lV-NiC" secondAttribute="bottom" constant="20" id="8n3-XC-h8G"/>
                                     <constraint firstAttribute="trailing" secondItem="bP2-vK-jm9" secondAttribute="trailing" constant="20" id="OL0-Ib-Oxf"/>
                                     <constraint firstAttribute="height" constant="220" id="SBC-4r-oKE"/>
                                     <constraint firstAttribute="trailing" secondItem="niW-BM-s2m" secondAttribute="trailing" constant="20" id="Tgp-3F-uqW"/>
                                     <constraint firstItem="oog-lV-NiC" firstAttribute="top" secondItem="B6f-gL-GER" secondAttribute="top" constant="20" id="YmQ-ih-Y8h"/>
                                     <constraint firstItem="qum-qb-FV0" firstAttribute="top" secondItem="bP2-vK-jm9" secondAttribute="bottom" constant="8" id="ad3-dM-e8W"/>
+                                    <constraint firstItem="4OG-RK-fa6" firstAttribute="leading" secondItem="B6f-gL-GER" secondAttribute="leading" constant="30" id="cc0-RO-chK"/>
                                     <constraint firstAttribute="trailing" secondItem="qum-qb-FV0" secondAttribute="trailing" constant="20" id="iVg-Om-sCT"/>
                                     <constraint firstAttribute="trailing" secondItem="oog-lV-NiC" secondAttribute="trailing" constant="20" id="kWg-Tb-EEQ"/>
                                     <constraint firstItem="oog-lV-NiC" firstAttribute="leading" secondItem="B6f-gL-GER" secondAttribute="leading" constant="20" id="own-pw-Oej"/>
@@ -203,9 +214,11 @@
                         <viewLayoutGuide key="safeArea" id="bwF-Wi-HcH"/>
                     </view>
                     <connections>
+                        <outlet property="LabelValidate" destination="4OG-RK-fa6" id="BKT-DV-2JQ"/>
+                        <outlet property="buttonSignIn" destination="niW-BM-s2m" id="krz-ew-fzd"/>
                         <outlet property="emailTextField" destination="oog-lV-NiC" id="muU-DI-4AW"/>
                         <outlet property="passwordTextField" destination="bP2-vK-jm9" id="hS9-t5-Hl1"/>
-                        <segue destination="xot-u3-Aob" kind="modal" identifier="goToMain" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="hG2-dS-nmh"/>
+                        <segue destination="xot-u3-Aob" kind="presentation" identifier="goToMain" id="hG2-dS-nmh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zx-xn-Skb" userLabel="First Responder" sceneMemberID="firstResponder"/>

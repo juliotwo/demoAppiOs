@@ -50,6 +50,7 @@
 		F33884D222D5978C00D72E23 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884CF22D5978C00D72E23 /* AddViewController.swift */; };
 		F33884D622D7A15E00D72E23 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884D522D7A15E00D72E23 /* TransactionTableViewCell.swift */; };
 		F33884D822D7A54300D72E23 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884D722D7A54300D72E23 /* Numeric.swift */; };
+		F36A5A9F22F89FEF0027F196 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36A5A9E22F89FEF0027F196 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		F33884CF22D5978C00D72E23 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		F33884D522D7A15E00D72E23 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		F33884D722D7A54300D72E23 /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
+		F36A5A9E22F89FEF0027F196 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				9FDFDF06219C6D6500CD505D /* Profile.storyboard */,
+				F36A5A9E22F89FEF0027F196 /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				9F62FD2E219CB4FA00A83344 /* OnBoardingStepsViewController.swift in Sources */,
 				9F03432F219C57E300603993 /* AppDelegate.swift in Sources */,
 				F33884D122D5978C00D72E23 /* AddTransactionsViewModel.swift in Sources */,
+				F36A5A9F22F89FEF0027F196 /* ProfileViewController.swift in Sources */,
 				9FCF77A2219DD52D00BCF51B /* LottieViewController.swift in Sources */,
 				9FE368CB219DAA7400606E29 /* TabBarViewController.swift in Sources */,
 				9F62FD2A219CB19D00A83344 /* OnBoardingContainerViewController.swift in Sources */,
