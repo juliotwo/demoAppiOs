@@ -48,6 +48,8 @@
 		F33884D022D5978C00D72E23 /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F33884CD22D5978B00D72E23 /* Add.storyboard */; };
 		F33884D122D5978C00D72E23 /* AddTransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884CE22D5978B00D72E23 /* AddTransactionsViewModel.swift */; };
 		F33884D222D5978C00D72E23 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884CF22D5978C00D72E23 /* AddViewController.swift */; };
+		F33884D622D7A15E00D72E23 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884D522D7A15E00D72E23 /* TransactionTableViewCell.swift */; };
+		F33884D822D7A54300D72E23 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884D722D7A54300D72E23 /* Numeric.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +133,8 @@
 		F33884CD22D5978B00D72E23 /* Add.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
 		F33884CE22D5978B00D72E23 /* AddTransactionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionsViewModel.swift; sourceTree = "<group>"; };
 		F33884CF22D5978C00D72E23 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		F33884D522D7A15E00D72E23 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		F33884D722D7A54300D72E23 /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +321,7 @@
 				9FE368C6219CCB3100606E29 /* EmptyState.xib */,
 				9FE368CC219DAD5E00606E29 /* TransactionsCell.xib */,
 				F33884CB22D5890A00D72E23 /* TransactionsViewModel.swift */,
+				F33884D522D7A15E00D72E23 /* TransactionTableViewCell.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				9F62FD23219C914700A83344 /* Shadow.swift */,
+				F33884D722D7A54300D72E23 /* Numeric.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -635,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F62FD30219CC47100A83344 /* TransactionsViewController.swift in Sources */,
+				F33884D622D7A15E00D72E23 /* TransactionTableViewCell.swift in Sources */,
 				9F62FD24219C914700A83344 /* Shadow.swift in Sources */,
 				F33884D222D5978C00D72E23 /* AddViewController.swift in Sources */,
 				9F62FD2E219CB4FA00A83344 /* OnBoardingStepsViewController.swift in Sources */,
@@ -644,6 +651,7 @@
 				9FE368CB219DAA7400606E29 /* TabBarViewController.swift in Sources */,
 				9F62FD2A219CB19D00A83344 /* OnBoardingContainerViewController.swift in Sources */,
 				F33884CC22D5890A00D72E23 /* TransactionsViewModel.swift in Sources */,
+				F33884D822D7A54300D72E23 /* Numeric.swift in Sources */,
 				9F62FD2C219CB23100A83344 /* OnBoardingViewController.swift in Sources */,
 				F33884A322D3DF4000D72E23 /* SignInViewModel.swift in Sources */,
 				F33884A122D3BBD500D72E23 /* SignInViewController.swift in Sources */,

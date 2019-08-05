@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseFirestore
 import DemoAppCore
-
+import FirebaseAuth
 class AddTransactionsViewModel {
     private var db: Firestore {
         return Firestore.firestore()

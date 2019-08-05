@@ -30,7 +30,7 @@ class TransactionsViewModel {
     var delegate: TransactionViewModelDelegate?
     
     init() {
-        db.collection("transactions").getDocuments { [weak self] (snapshot, error) in
+        db.collection("transactions").order(by: "date",descending: true).addSnapshotListener { [weak self] (snapshot, error) in
             guard let self = self else{
             return
             }
@@ -49,10 +49,49 @@ class TransactionsViewModel {
                 guard let transaction = try? JSONDecoder().decode(Transaction.self, from: jsonData) else {
                     return
                 }
-                
+                transaction.firebaseId = snapshot.documentID
                 self.items.append(transaction)
-                self.delegate?.reloadData()
+                
             })
+            self.delegate?.reloadData()
         }
     }
+    func item(at indexPath: IndexPath) -> TransactionViewModel {
+        return TransactionViewModel(transaction: items[indexPath.row])
+    }
+    func remove(at indexpath: IndexPath) {
+        let item = items.remove(at: indexpath.row)
+        guard let firebaseId = item.firebaseId else{
+            return
+        }
+        db.collection("transactions").document(firebaseId).delete()
+    }
+    
+}
+class TransactionViewModel {
+    private var transaction: DemoAppCore.Transaction
+    
+    var name: String{
+        return transaction.name
+    }
+    var value: String{
+        return transaction.value.currency()
+    }
+    var date: String{
+        let formatter = DateFormatter()
+        formatter.dateFormat="dd-MM-yyy"
+        formatter.timeZone = TimeZone.current
+        return formatter.string(from: transaction.date)
+    }
+    var time: String{
+        let formatter = DateFormatter()
+        formatter.dateFormat="hh:mm"
+        formatter.timeZone = TimeZone.current
+        return formatter.string(from: transaction.date)
+    }
+    init(transaction:DemoAppCore.Transaction) {
+        self.transaction = transaction
+    }
+    
+    
 }

@@ -13,7 +13,6 @@ import Firebase
 import GoogleSignIn
 typealias SignInHandler = ( (_ success: Bool, _ error: Error?) -> Void )
 
-
 class SignInViewModel: NSObject {
     static func signInWith(email: String?, password: String?, handler: SignInHandler?) {
         guard let email = email,

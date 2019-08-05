@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="86" id="pyS-SW-e4n">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="86" id="pyS-SW-e4n" customClass="TransactionTableViewCell" customModule="DemoApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="86"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pyS-SW-e4n" id="YAn-gR-G3H">
@@ -110,6 +110,14 @@
                     <constraint firstItem="ZM7-UR-3ds" firstAttribute="leading" secondItem="dk2-Kq-twt" secondAttribute="trailing" constant="4" id="tS9-c7-U5Y"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="TransactionDescriptionLabel" destination="foH-TA-YOW" id="vCd-2N-8kQ"/>
+                <outlet property="transactionDateLabel" destination="bwJ-kz-oDX" id="L8W-X7-5oR"/>
+                <outlet property="transactionNameLabel" destination="Quk-PW-KYw" id="4h6-jo-s2n"/>
+                <outlet property="transactionTimeLabel" destination="WYA-t7-PHR" id="hkD-Zr-3Vi"/>
+                <outlet property="transactionValueLabel" destination="skr-EI-rhT" id="Jzk-aa-Ite"/>
+            </connections>
+            <point key="canvasLocation" x="128" y="52.173913043478265"/>
         </tableViewCell>
     </objects>
     <resources>
