@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseFirestore
 import DemoAppCore
+import FirebaseAuth
 protocol TransactionViewModelDelegate {
     func reloadData()
 }
@@ -30,30 +31,41 @@ class TransactionsViewModel {
     var delegate: TransactionViewModelDelegate?
     
     init() {
-        db.collection("transactions").order(by: "date",descending: true).addSnapshotListener { [weak self] (snapshot, error) in
-            guard let self = self else{
+        getdata()
+        NotificationCenter.default.addObserver(self, selector: #selector(getdata), name: Notification.Name("AddedNewData"), object: nil)
+    }
+    @objc private func getdata(){
+        guard let uid = Auth.auth().currentUser?.uid else {
             return
-            }
-            
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            
-            self.items.removeAll()
-            
-            try? snapshot?.documents.forEach({ (snapshot) in
-                let json = snapshot.data()
-                let jsonData = try JSONSerialization.data(withJSONObject: json, options: [])
-                
-                guard let transaction = try? JSONDecoder().decode(Transaction.self, from: jsonData) else {
+        }
+        
+        db.collection("transactions")
+            .whereField("ownerId", isEqualTo: uid)
+            .order(by: "date",descending: true)
+            .addSnapshotListener { [weak self] (snapshot, error) in
+                guard let self = self else{
                     return
                 }
-                transaction.firebaseId = snapshot.documentID
-                self.items.append(transaction)
                 
-            })
-            self.delegate?.reloadData()
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                
+                self.items.removeAll()
+                
+                try? snapshot?.documents.forEach({ (snapshot) in
+                    let json = snapshot.data()
+                    let jsonData = try JSONSerialization.data(withJSONObject: json, options: [])
+                    
+                    guard let transaction = try? JSONDecoder().decode(Transaction.self, from: jsonData) else {
+                        return
+                    }
+                    transaction.firebaseId = snapshot.documentID
+                    self.items.append(transaction)
+                    
+                })
+                self.delegate?.reloadData()
         }
     }
     func item(at indexPath: IndexPath) -> TransactionViewModel {

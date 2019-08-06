@@ -19,9 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqd-0q-M5B">
-                                <rect key="frame" x="137" y="588" width="101" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqd-0q-M5B">
+                                <rect key="frame" x="137" y="563" width="101" height="30"/>
                                 <state key="normal" title="Cerrar Session"/>
                                 <connections>
                                     <action selector="SignOut:" destination="TdJ-My-FMm" eventType="touchUpInside" id="H2U-t5-di7"/>
@@ -29,6 +28,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="StZ-ZT-ozt" firstAttribute="bottom" secondItem="Vqd-0q-M5B" secondAttribute="bottom" constant="25" id="7gn-Nt-WiZ"/>
+                            <constraint firstItem="Vqd-0q-M5B" firstAttribute="centerX" secondItem="Jd6-3J-fWR" secondAttribute="centerX" id="f6A-3i-jcQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="StZ-ZT-ozt"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="7Wn-HS-fer"/>

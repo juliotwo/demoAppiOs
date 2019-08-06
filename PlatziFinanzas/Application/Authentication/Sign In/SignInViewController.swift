@@ -56,6 +56,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
     @IBAction func ValidateEmail(_ sender: Any) {
         if SignInViewModel.validate(emailTextField.text ?? "", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
         {
+            LabelValidate.isHidden = true
          buttonSignIn.isEnabled = true
         }
         else{
