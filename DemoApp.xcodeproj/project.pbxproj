@@ -51,6 +51,8 @@
 		F33884D622D7A15E00D72E23 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884D522D7A15E00D72E23 /* TransactionTableViewCell.swift */; };
 		F33884D822D7A54300D72E23 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33884D722D7A54300D72E23 /* Numeric.swift */; };
 		F36A5A9F22F89FEF0027F196 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36A5A9E22F89FEF0027F196 /* ProfileViewController.swift */; };
+		F36A5AA322F9EE5D0027F196 /* LocalNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36A5AA222F9EE5D0027F196 /* LocalNotificationController.swift */; };
+		F36A5AA522F9F8780027F196 /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36A5AA422F9F8780027F196 /* PushNotificationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +139,9 @@
 		F33884D522D7A15E00D72E23 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		F33884D722D7A54300D72E23 /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
 		F36A5A9E22F89FEF0027F196 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F36A5AA222F9EE5D0027F196 /* LocalNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationController.swift; sourceTree = "<group>"; };
+		F36A5AA422F9F8780027F196 /* PushNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationController.swift; sourceTree = "<group>"; };
+		F36A5AA622F9FA520027F196 /* DemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +179,7 @@
 		9F034322219C57E300603993 = {
 			isa = PBXGroup;
 			children = (
+				F36A5AA622F9FA520027F196 /* DemoApp.entitlements */,
 				F33884C822D451D000D72E23 /* FBSDKLoginKit.framework */,
 				F33884AE22D440AD00D72E23 /* FirebaseCore.framework */,
 				9FB06215219DD12F00EEB1A9 /* Cartfile */,
@@ -198,6 +204,7 @@
 		9F03432D219C57E300603993 /* PlatziFinanzas */ = {
 			isa = PBXGroup;
 			children = (
+				F36A5AA122F9EE290027F196 /* Controller */,
 				9F62FD22219C913100A83344 /* Extensions */,
 				9F449FE2219C60410050784B /* Resources */,
 				9F449FE1219C601C0050784B /* Base */,
@@ -400,6 +407,15 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
+		F36A5AA122F9EE290027F196 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F36A5AA222F9EE5D0027F196 /* LocalNotificationController.swift */,
+				F36A5AA422F9F8780027F196 /* PushNotificationController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -426,6 +442,7 @@
 				9FB0621D219DD1E600EEB1A9 /* ShellScript */,
 				8B733591328C9FFDC8B075B7 /* [CP] Embed Pods Frameworks */,
 				BD807D1F073075CF3ED7E922 /* [CP] Copy Pods Resources */,
+				F36A5AA022F9EC1A0027F196 /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -467,6 +484,11 @@
 				TargetAttributes = {
 					9F03432A219C57E300603993 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					9F330CDA21BEA06C003FB69E = {
 						CreatedOnToolsVersion = 10.1;
@@ -636,6 +658,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F36A5AA022F9EC1A0027F196 /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = Fabric;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -650,6 +691,7 @@
 				9F62FD2E219CB4FA00A83344 /* OnBoardingStepsViewController.swift in Sources */,
 				9F03432F219C57E300603993 /* AppDelegate.swift in Sources */,
 				F33884D122D5978C00D72E23 /* AddTransactionsViewModel.swift in Sources */,
+				F36A5AA522F9F8780027F196 /* PushNotificationController.swift in Sources */,
 				F36A5A9F22F89FEF0027F196 /* ProfileViewController.swift in Sources */,
 				9FCF77A2219DD52D00BCF51B /* LottieViewController.swift in Sources */,
 				9FE368CB219DAA7400606E29 /* TabBarViewController.swift in Sources */,
@@ -659,6 +701,7 @@
 				9F62FD2C219CB23100A83344 /* OnBoardingViewController.swift in Sources */,
 				F33884A322D3DF4000D72E23 /* SignInViewModel.swift in Sources */,
 				F33884A122D3BBD500D72E23 /* SignInViewController.swift in Sources */,
+				F36A5AA322F9EE5D0027F196 /* LocalNotificationController.swift in Sources */,
 				9FE368CF219DADCA00606E29 /* BudgetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -834,6 +877,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DemoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69RRCEKXZC;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -859,6 +903,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DemoApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69RRCEKXZC;
 				FRAMEWORK_SEARCH_PATHS = (
